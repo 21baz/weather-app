@@ -191,7 +191,7 @@ pn.state.add_periodic_callback(refresh_live_weather, period=WEATHER_REFRESH_SECO
 real_time_tab = pn.Column(
     pn.pane.Markdown('## Live Weather'),
     live_md,
-    pn.pane.Markdown('This is optional live data from Open-Meteo. The rest of the dashboard uses your local dataset.'),
+    pn.pane.Markdown('This is optional live data from Open-Meteo.'),
     sizing_mode='stretch_width'
 )
 
