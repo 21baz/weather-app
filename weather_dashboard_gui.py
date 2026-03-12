@@ -9,18 +9,16 @@ import requests
 
 pn.extension('tabulator', notifications=True)
 
-# -----------------------------
-# Config
-# -----------------------------
+
+# CONFIG
 DATA_PATH = os.environ.get('WEATHER_DATA_PATH', 'DATA2(in).csv')
 SHEET_NAME = os.environ.get('WEATHER_SHEET_NAME', 'in')
 LAT = 53.7960
 LON = -1.7594
 WEATHER_REFRESH_SECONDS = 300
 
-# -----------------------------
-# Data loading / cleaning
-# -----------------------------
+
+# DATA LOADING / CLEANSING
 MISSING_MARKERS = ['---', '--', '—', 'nan', 'NaN', '']
 
 
@@ -78,9 +76,8 @@ numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
 if not numeric_cols:
     raise ValueError('No numeric columns found after cleaning.')
 
-# -----------------------------
-# Useful defaults
-# -----------------------------
+
+# USEFUL DEFAULTS
 DEFAULT_METRIC = 'Temp_Out' if 'Temp_Out' in numeric_cols else numeric_cols[0]
 DEFAULT_HUM = 'Out_Hum' if 'Out_Hum' in numeric_cols else numeric_cols[min(1, len(numeric_cols)-1)]
 WIND_SPEED_COL = 'Wind_Speed' if 'Wind_Speed' in df.columns else None
@@ -92,9 +89,8 @@ SOLAR_COL = 'Solar_Rad' if 'Solar_Rad' in df.columns else None
 UV_COL = 'UV_Index' if 'UV_Index' in df.columns else None
 PRESSURE_COL = 'Bar' if 'Bar' in df.columns else None
 
-# -----------------------------
-# Styling helpers
-# -----------------------------
+
+# STYLING HELPERS
 ACCENT = '#1f4e79'
 CARD_STYLE = {
     'styles': {
@@ -154,9 +150,8 @@ summary_md = pn.pane.Markdown(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Optional live weather tab
-# -----------------------------
+
+# LIVE WEATHER TAB
 live_md = pn.pane.Markdown('Loading live weather…', sizing_mode='stretch_width')
 
 
@@ -200,9 +195,8 @@ real_time_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Main time-series explorer
-# -----------------------------
+
+# MAIN TIME SERIES EXPLORER
 metric = pn.widgets.Select(name='Metric', options=sorted(numeric_cols), value=DEFAULT_METRIC)
 resample = pn.widgets.Select(name='Resample', options=['None', '30min', '1h', '1D', '1W', '1M'], value='1h')
 date_range = pn.widgets.DateRangeSlider(
@@ -247,9 +241,8 @@ time_series_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Overview tab for your main GUI section
-# -----------------------------
+
+# OVERVIEW TAB
 main_metric = pn.widgets.Select(
     name='Metric',
     options=[m for m in ['Temp_Out', 'Out_Hum', 'Wind_Speed', 'Bar', 'Rain', 'Solar_Rad', 'UV_Index'] if m in numeric_cols] or sorted(numeric_cols),
@@ -286,9 +279,8 @@ overview_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Humidity vs temperature tab
-# -----------------------------
+
+# HUMIDITY VS TEMP TAB
 temp_col = pn.widgets.Select(name='Temperature column', options=TEMP_COLS, value='Temp_Out' if 'Temp_Out' in TEMP_COLS else TEMP_COLS[0])
 hum_col = pn.widgets.Select(name='Humidity column', options=HUM_COLS, value='Out_Hum' if 'Out_Hum' in HUM_COLS else HUM_COLS[0])
 
@@ -328,9 +320,8 @@ hum_temp_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Wind tab
-# -----------------------------
+
+# WIND TAB
 def wind_layout():
     parts = [pn.pane.Markdown('## Wind Analysis')]
 
@@ -373,9 +364,8 @@ def wind_layout():
 
 wind_tab = wind_layout()
 
-# -----------------------------
-# Seasonal / monthly summaries
-# -----------------------------
+
+# SEASONAL / MONTHLY SUMMARIES
 summary_metric = pn.widgets.Select(name='Summary metric', options=sorted(numeric_cols), value=DEFAULT_METRIC)
 
 
@@ -421,9 +411,8 @@ summaries_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# Data table
-# -----------------------------
+
+# DATA TABLE
 table = pn.widgets.Tabulator(df, pagination='remote', page_size=20, sizing_mode='stretch_width', height=520)
 data_table_tab = pn.Column(
     pn.pane.Markdown('## Raw Data'),
@@ -431,9 +420,7 @@ data_table_tab = pn.Column(
     sizing_mode='stretch_width'
 )
 
-# -----------------------------
-# App
-# -----------------------------
+# APP
 app = pn.Column(
     pn.pane.Markdown("# Weather Dashboard"),
     pn.Tabs(
