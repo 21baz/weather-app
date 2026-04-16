@@ -1,0 +1,79 @@
+Meeting minutes as seperate groups (groups merged later),,,,,,,,
+Date,Meeting minutes,Participants,Content,,Date,Meeting minutes,Participants,Content
+05/02/2026,9:00 - 11:00,"Basmah Vania
+Mohammed Ali","• Discussed understanding of project
+• Met with client who gave us an overview of the project and answered questions (e.g. main parameters, data to use to train ML model)
+• Next: Meet with client to view the live data source (Davis pro weather station)",,29/01/2026,9:30 - 10:30,"Ghafoor Khan
+Ruthvik Chinthala
+Haseeb Khan
+Adhia Ali","• Met with group memebers
+• Discussed understanding of project
+• Next: Meet with client for overview"
+06/02/2026,11:30 - 12:00,"Basmah Vania
+Mohammed Ali","
+• Met with client to view the live data source (Davis pro weather station), discuss format of data and look through sample code
+• Next: Delegate work",,05/02/2026,10:00 - 11:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali","
+• Met with client who gave us an overview of the project and answered questions (e.g. main parameters, data to use to train ML model)
+• Next: Meet with client to view the live data source (Davis pro weather station)"
+11/2/2026,14:00 - 15:00,"Basmah Vania
+Mohammed Ali","• Discussed dataset and sample code as group
+• Delegated pages:
+- Basmah = landing page 
+- Mohammed = comparing data to another source
+• Next: Review progress and delegate next tasks",,02/03/2026,11:00 - 12:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali","
+• Met with client to view the live data source (Davis pro weather station), discuss format of data and look through sample code
+• Next: Delegate work"
+Meeting minutes together,,,,,3/5/2026,10:00 - 11:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali","• Discussed dataset and sample code as group
+• Delegated pages:
+- Ghafoor = dashboard, data cleansing and processing
+- Ruthvik = introduction
+- Adhia = integration requirements and data migration / conversion
+• Next: Review progress and delegate next tasks"
+Date,Meeting minutes,Participants,Content,,,,,
+26/03/2026,9:00 - 11:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali
+Basmah Vania
+Mohammed Ali","• Discussed progress and met new members
+• Delegated pages:
+- Basmah = giu prototype and github
+- Ghafoor = all back- end
+• Next: Review progress and delegate next tasks",,,,,
+2/4/2024,9:00 - 11:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali
+Basmah Vania
+Mohammed Ali","• Discussed progress
+• Final touches before prototype presentation
+• Next: Present prototype",,,,,
+9/4/2025,9:00 - 11:00,"Ghafoor Khan
+Ruthvik Chinthala
+Adhia Ali
+Basmah Vania
+Mohammed Ali","• Discussed progress
+• Tasks highlighted to be done:
+- Improved ui
+- Live alerts
+- Other documentation
+• Next: Review progress and delegate next tasks",,,,,
+13/04/2026,13:00 - 14:00,"Ghafoor Khan
+Ruthvik Chinthala
+Basmah Vania","• Discussed progress
+• Delegated pages:
+- Basmah = live alerts
+- Ghafoor = comparing uni data to met data
+• Next: Review progress and delegate next tasks",,,,,
+16/04/2026,12:00 - 16:30,"Ghafoor Khan
+Basmah Vania
+Mohammed Ali","• Merging code (making the final file)
+• Ensuring as much critea as possible is met
+- Basmah = integrated live alerts (issues) and completed meeting minutes
+- Mohammed = unit testing and code inspection
+- Ghafoor = acceptance testing and code inspection
+• Next: Discuss and prepare for presentation",,,,,
